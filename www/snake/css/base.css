@@ -1,0 +1,126 @@
+/***********************通用基础样式************************/
+/*目前要兼容的浏览器的hack方法*/
+/*样式初始化*/
+/*屏幕分辨率与字体大小比值为25*/
+@media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
+ html,body {font-size:38.4px;}
+ }
+@media only screen and (max-width: 800px), only screen and (max-device-width:800px) {
+ html,body {font-size:32px;}
+ }
+@media only screen and (max-width: 768px), only screen and (max-device-width:768px) {
+ html,body {font-size:30.72px;}
+ }
+@media only screen and (max-width: 760px), only screen and (max-device-width:760px) {
+ html,body {font-size:30.4px;}
+ }
+@media only screen and (max-width: 720px), only screen and (max-device-width:720px) {
+ html,body {font-size:28.8px;}
+ }
+@media only screen and (max-width: 680px), only screen and (max-device-width:680px) {
+ html,body {font-size:27.2px;}
+ }
+@media only screen and (max-width: 640px), only screen and (max-device-width:640px) {
+ html,body {font-size:25.6px;}
+ }
+@media only screen and (max-width: 600px), only screen and (max-device-width:600px) {
+ html,body {font-size:24px;}
+ }
+@media only screen and (max-width: 560px), only screen and (max-device-width:560px) {
+ html,body {font-size:22.4px;}
+ }
+@media only screen and (max-width: 520px), only screen and (max-device-width:520px) {
+ html,body {font-size:20.8px;}
+ }
+ @media only screen and (max-width: 480px), only screen and (max-device-width:480px) {
+ html,body {font-size:19.2px;}
+ }
+ @media only screen and (max-width: 414px), only screen and (max-device-width:414px) {
+ html,body {font-size:16.56px;}
+ }
+ @media only screen and (max-width: 400px), only screen and (max-device-width:400px) {
+ html,body {font-size:16px;}
+ }
+ @media only screen and (max-width: 375px), only screen and (max-device-width:375px) {
+ html,body {font-size:15px;}
+ }
+ @media only screen and (max-width: 360px), only screen and (max-device-width:360px) {
+ html,body {font-size:14.4px;}
+ }
+ @media only screen and (max-width: 320px), only screen and (max-device-width:320px) {
+ html,body {font-size:12.8px;}
+ }
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+         -o-box-sizing: border-box;
+            box-sizing: border-box;
+}
+/*通用*/
+body {
+    margin:0;
+    padding:0;
+/*    font: 15px "SimHei","Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;*/
+    color: #444;
+}
+select,img,input,ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+}
+a,a:hover, a:visited, a:link, a:active {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline:none;
+    background: none;
+    text-decoration: none;
+}
+input {border:none;}
+.fl   {float:left;}
+.fr  {float:right;}
+.clear  {clear:both;}
+img{
+    border-style:none;
+}
+/************ 清除专区*************/
+/*after{
+    content: "";
+    display: block;
+    height:0;
+    clear: both;
+}*/
+/*抖动动画*/
+@keyframes Shake{
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    100%{
+        transfrom: translate(-10px,0px) rotate(-10deg);
+    }
+}
+.shake{
+    animation-name:shake;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    -webkit-animation-name:shake;
+    -webkit-animation-duration:1s;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-iteration-count:infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

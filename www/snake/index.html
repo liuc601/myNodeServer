@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--兼容国产浏览器的高速模式-->
+    <meta name="renderer" content="webkit">
+    <!--响应式必备头部-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/snake.css">
+    <style>
+    </style>
+</head>
+<body>
+      <table class="snake_box">
+          <tr>
+              <td class=""></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td class=""></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </table>
+      <div class="contrl_box">
+          <button class="stop fl">暂停</button>
+          <button class="seting fr">设置</button>
+          <div class="drc">
+              <i class="ctrl_ball"></i>
+          </div>
+      </div>
+   <script src="js/jquery-1.8.3.js"></script>
+   <script src="js/snake.js"></script>
+   <script src="js/control.js"></script>
+    <script>
+        $(".contrl_box .fl").on("touchend",function(e){
+            e.preventDefault;
+            e.stopPropagation;
+            if($(this).hasClass("stop")){
+                snakeGame.stop();
+                $(this).removeClass("stop").addClass("play").html("继续");
+            }else if($(this).hasClass("play")){
+                snakeGame.move();
+                $(this).removeClass("play").addClass("stop").html("暂停");
+            }
+        });
+        /*控制*/
+        $(document).on("keydown",function(e){
+            switch(e.keyCode){
+                case 37:
+                    snakeGame.timer&&(snakeGame.drc!="right")&&(snakeGame.drc="left");
+                break;
+                case 38:
+                    snakeGame.timer&&(snakeGame.drc!="bottom")&&(snakeGame.drc="top");
+                break;
+                case 39:
+                    snakeGame.timer&&(snakeGame.drc!="left")&&(snakeGame.drc="right");
+                break;
+                case 40:
+                    snakeGame.timer&&(snakeGame.drc!="top")&&(snakeGame.drc="bottom");
+                break;
+            }
+        });
+        ctrlBox.init(".drc");
+    </script>
+</body>
+</html>
